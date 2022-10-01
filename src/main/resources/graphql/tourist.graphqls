@@ -1,0 +1,23 @@
+type TouristInfo {
+    id: Int!
+    touristName: String!
+    touristEmail: String!
+    touristLocation: String!
+    createdAt:String!
+}
+
+
+type Tourist {
+    page: Int!
+    per_page: Int!
+    totalrecord: Int!
+    total_pages: Int!
+    datas: [TouristInfo]!
+}
+
+extend type Query {
+    getTourist: Tourist!
+}
+schema {
+    query: Query
+}
